@@ -5,7 +5,7 @@ metadata:
   namespace: observer
 spec:
   # Run at the top of every hour
-  schedule: "0 * * * *"
+  schedule: "* * * * *"
   jobTemplate:
     spec:
       template:
@@ -13,7 +13,7 @@ spec:
           serviceAccountName: observer-sa
           containers:
           - name: observer-pod
-            image: public.ecr.aws/n5p5f4n3/conformitron-observer-bot:latest
+            image: 863541036173.dkr.ecr.us-east-1.amazonaws.com/observerbot:latest
             imagePullPolicy: Always
             env:
               - name: GITHUB_TOKEN
@@ -24,5 +24,5 @@ spec:
               - name: REPO
                 value: eks-anywhere-addons
               - name: OWNER
-                value: aws-samples
+                value: pjv93
           restartPolicy: Never
