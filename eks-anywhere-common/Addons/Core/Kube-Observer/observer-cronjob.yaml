@@ -5,7 +5,7 @@ metadata:
   namespace: observer
 spec:
   # Run at the top of every hour
-  schedule: "* * * * *"
+  schedule: "* * * * 0"
   jobTemplate:
     spec:
       template:
